@@ -6,7 +6,7 @@ O projeto foi desenvolvido com **Node.js**, **Express**, **SQLite3**, **React** 
 
 ---
 
-## 🚀 Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 ### Frontend
 - React  
@@ -23,30 +23,30 @@ O projeto foi desenvolvido com **Node.js**, **Express**, **SQLite3**, **React** 
 
 ---
 
-## 📡 Rotas da API
+## Rotas da API
 
-### 🧍‍♂️ Usuários
+### Usuários
 
 - **POST** `/users` → Cria um novo usuário  
 - **GET** `/users` → Lista todos os usuários  
 
 ---
 
-### 🎉 Posts
+### Posts
 
 - **POST** `/posts` → Cria um novo post (ideia de festa)  
 - **GET** `/posts` → Lista todos os posts  
 
 ---
 
-### 💬 Comentários
+### Comentários
 
 - **POST** `/comments` → Cria um comentário em um post  
 - **GET** `/comments/:postId` → Lista comentários de um post  
 
 ---
 
-## 🗃️ Banco de Dados (SQLite)
+## Banco de Dados (SQLite)
 
 O banco **`database.sqlite`** armazena três tabelas principais:
 
