@@ -1,0 +1,20 @@
+.post-card {
+  width: 100%;
+  background: #141414;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 0 10px rgba(138, 43, 226, 0.3);
+  text-align: left;
+}
+
+.post-card small {
+  padding-right: 50%;
+}
+
+.post-card a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #9b30ff;
+}
