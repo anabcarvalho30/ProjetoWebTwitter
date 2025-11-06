@@ -26,19 +26,21 @@ const PostPage = () => {
   return (
     <div className="post-page">
       <div className="back-arrow-container">
-        <Link to="/" className="back-arrow">← Voltar</Link>
+        <Link to="/" className="back-arrow">ᐊ Voltar</Link>
       </div>
 
       <div className="post-container">
-        <div className="post-content">
-          <h2>@{post.author?.username}</h2>
-          <p>{post.content}</p>
-          <small>{new Date(post.createdAt).toLocaleString()}</small>
-        </div>
+
 
         <div className="post-comments">
           <CommentList postId={id} />
         </div>
+        <div className="post-content">
+          <h2>Ideia de: @{post.author?.username}</h2>
+          <p>{post.content}</p>
+          <small>{new Date(post.createdAt).toLocaleString()}</small>
+        </div>
+
       </div>
     </div>
   );

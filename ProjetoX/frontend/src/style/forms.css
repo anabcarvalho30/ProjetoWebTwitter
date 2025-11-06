@@ -73,3 +73,14 @@ button:hover {
   font-size: 0.95rem;
 }
 
+
+.notific {
+  margin-top: 15px;
+  background-color: #d491faff;
+  border: 1px solid #b700ffff;
+  border-radius: 8px;
+  padding: 10px 15px;
+  color: #372c66ff;
+  font-weight: 500;
+  transition: opacity 0.3s;
+}

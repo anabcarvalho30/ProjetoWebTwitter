@@ -6,9 +6,8 @@ const PostCard = ({ post }) => {
     <div className="post-card">
       <p><strong>@{post.author?.username}</strong></p>
       <p>{post.content}</p>
-      <small>{new Date(post.createdAt).toLocaleString()}</small>
-      <Link to={`/post/${post.id}`}>
-        Ver comentários
+      <small>{new Date(post.createdAt).toLocaleString()}</small><br></br>
+      <Link to={`/post/${post.id}`}><i className="fa-solid fa-comments"></i> Ver comentários
       </Link>
     </div>
   );

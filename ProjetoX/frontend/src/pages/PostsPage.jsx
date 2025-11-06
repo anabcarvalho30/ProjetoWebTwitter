@@ -19,8 +19,8 @@ const PostsPage = () => {
   }, []);
 
   return (
-    <div className="page">
-      <h1>Suas ideias para festas!</h1>
+    <div className="Posts">
+      <h1>Ideias para festas!</h1>
       {posts.length === 0 ? (
         <p>Sem ideias por aqui...</p>
       ) : (

@@ -3,9 +3,9 @@ import sequelize from "./config/db.js";
 
 const PORT = 4000;
 
-sequelize.sync({ alter: true })
+sequelize.sync({ force: true })
   .then(() => {
-    console.log("🟢 Banco SQLite sincronizado");
+    console.log("Banco SQLite recriado com sucesso");
     app.listen(PORT, () => console.log(`Servidor rodando na porta ${PORT}`));
   })
   .catch(err => console.error("Erro ao sincronizar banco:", err));

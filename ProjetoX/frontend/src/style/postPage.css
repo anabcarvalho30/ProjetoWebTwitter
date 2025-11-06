@@ -7,7 +7,6 @@
   gap: 20px;
 }
 
-/* Card do post */
 .post-content {
   flex: 1;
   background-color: #141414;
@@ -32,7 +31,6 @@
   color: #888;
 }
 
-/* Card dos comentários */
 .post-comments {
   flex: 1;
   background-color: #0f0f0f;
@@ -41,7 +39,6 @@
   box-shadow: 0 0 10px rgba(138, 43, 226, 0.3);
 }
 
-/* Voltar */
 .back-arrow-container {
   margin-bottom: 20px;
 }

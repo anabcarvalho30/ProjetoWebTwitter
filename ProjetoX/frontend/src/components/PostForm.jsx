@@ -11,6 +11,7 @@ const PostForm = ({ authorId, onPostCreated }) => {
     try {
       const response = await api.post("/posts", { authorId, content });
       onPostCreated(response.data);
+      onPostCreated(content);
       setContent("");
     } catch (err) {
       console.error("Erro ao criar post:", err);

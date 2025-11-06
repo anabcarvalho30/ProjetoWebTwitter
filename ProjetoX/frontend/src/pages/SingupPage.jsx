@@ -16,10 +16,13 @@ const SignupPage = () => {
     try {
       const res = await api.post("/users", form);
       const newUserId = res.data.id;
+      const newUsername = res.data.username;
 
       localStorage.setItem("userId", newUserId);
+      localStorage.setItem("username", newUsername);
+
       setUserId(newUserId);
-      setMessage(`Usuário criado: ${res.data.username} (ID salvo localmente!)`);
+      setMessage(`Usuário criado: ${newUsername} (ID e username salvos localmente!)`);
 
       setForm({ name: "", username: "", bio: "" });
       fetchUsers();
@@ -45,55 +48,60 @@ const SignupPage = () => {
   }, []);
 
   return (
-    <div className="page">
-      <h1>Crie sua conta!</h1>
+    <div className="principal">
+      <div className="page">
+        <h1>Crie sua conta!</h1>
 
-      <form onSubmit={handleSubmit}>
-        <input
-          name="name"
-          placeholder="Nome"
-          onChange={handleChange}
-          value={form.name}
-          required
-        />
-        <input
-          name="username"
-          placeholder="Usuário"
-          onChange={handleChange}
-          value={form.username}
-          required
-        />
-        <textarea
-          name="bio"
-          placeholder="Bio"
-          onChange={handleChange}
-          value={form.bio}
-        />
-        <button type="submit">Cadastrar</button>
-      </form>
+        <form onSubmit={handleSubmit}>
+          <input
+            name="name"
+            placeholder="Nome"
+            onChange={handleChange}
+            value={form.name}
+            required
+          />
+          <input
+            name="username"
+            placeholder="Usuário"
+            onChange={handleChange}
+            value={form.username}
+            required
+          />
+          <textarea
+            name="bio"
+            placeholder="Bio"
+            onChange={handleChange}
+            value={form.bio}
+          />
+          <button type="submit">Cadastrar</button>
+        </form>
 
-      {message && <p>{message}</p>}
+        {message && <p>{message}</p>}
 
-      {userId && (
-        <p style={{ marginTop: "10px", fontSize: "0.9em", color: "gray" }}>
-          ID salvo localmente, seu ID: <code>{userId}</code>
-        </p>
-      )}
-
-      <h2 style={{ marginTop: "30px" }}>Usuários Cadastrados</h2>
-      <div className="user-list">
-        {users.length === 0 ? (
-          <p style={{ color: "#aaa" }}>Nenhum usuário cadastrado ainda.</p>
-        ) : (
-          users.map((u) => (
-            <div key={u.id} className="user-card">
-              <strong>@{u.username}</strong>
-              <small>Nome: {u.name}</small><br></br>
-              <small>ID: {u.id}</small>
-              {u.bio && <p>Bio: {u.bio}</p>}
-            </div>
-          ))
+        {userId && (
+          <small style={{ paddingTop: "10px", display: "block", textAlign: "center", marginBottom: "10px", color: "#8d8d8dff" }}>
+            ID salvo localmente: <code>{userId}</code><br />
+            Username salvo: <code>{localStorage.getItem("username")}</code>
+          </small>
         )}
+      </div>
+
+      <div className="page">
+        <h2>Usuários Cadastrados</h2>
+        <div className="user-list">
+          {users.length === 0 ? (
+            <p style={{ color: "#aaa" }}>Nenhum usuário cadastrado ainda.</p>
+          ) : (
+            users.map((u) => (
+              <div key={u.id} className="user-card">
+                <strong>@{u.username}</strong>
+                <small>Nome: {u.name}</small><br />
+                <small>ID: {u.id}</small>
+                {u.bio && <p>Bio: {u.bio}</p>}
+              </div>
+            ))
+          )}
+        </div>
       </div>
     </div>
   );
